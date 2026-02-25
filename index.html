@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Respira. Vas a estar bien. — Luz Espinoza</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--tl:#5BA8A0;--td:#3D8C84;--tp:#2E7A72;--tl2:#9DD0CA;--tg:rgba(91,168,160,.3);--gd:#D4A853;--gl:#E8C97A;--tx:#2E3D40;--tb:#3F5357;--tm:#5A6E72;--ts:#7D9498;--tf:#A3B8BC;--cr:#FAF7F2;--w:#fff;--g:rgba(255,255,255,.55);--gb:rgba(255,255,255,.65);--gs:rgba(255,255,255,.72)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;color:var(--tx);background:var(--cr);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.bg{position:fixed;inset:0;z-index:-2;background:linear-gradient(175deg,#E8F2F0 0%,#DCE9E5 20%,#D2DFD9 40%,#DAE0CE 60%,#E8E3D1 80%,#F3EDDF 100%)}
+.bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 45% at 12% 18%,rgba(140,197,191,.3) 0%,transparent 70%),radial-gradient(ellipse 45% 35% at 85% 75%,rgba(212,168,83,.1) 0%,transparent 60%)}
+.page{display:none}.page.active{display:block;animation:pi .4s ease}
+@keyframes pi{from{opacity:0}to{opacity:1}}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:.6rem 1.5rem;display:flex;align-items:center;justify-content:space-between;transition:all .4s}
+.nav.sc{background:rgba(250,247,242,.92);backdrop-filter:blur(18px);box-shadow:0 1px 20px rgba(91,168,160,.06)}
+.nb{display:flex;align-items:center;gap:.75rem;cursor:pointer;text-decoration:none}
+.nl{height:88px;transition:transform .3s}
+.nb:hover .nl{transform:scale(1.04)}
+.ni .nn{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--td);line-height:1.1}
+.ni .nr{font-size:.55rem;color:var(--ts);letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.nc{background:linear-gradient(135deg,var(--tl),var(--td));color:#fff;border:none;padding:.5rem 1.3rem;border-radius:50px;font-family:'Nunito',sans-serif;font-size:.75rem;font-weight:700;cursor:pointer;transition:all .3s;box-shadow:0 3px 12px var(--tg)}
+.nc:hover{transform:translateY(-1px);box-shadow:0 5px 18px var(--tg)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:7rem 1.5rem 3rem}
+.hi{max-width:680px}
+.hb{display:inline-flex;align-items:center;gap:.4rem;background:var(--g);backdrop-filter:blur(8px);border:1px solid var(--gb);border-radius:50px;padding:.4rem 1.1rem;font-size:.67rem;font-weight:700;color:var(--td);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1.8rem;animation:fd .7s ease .2s both}
+.hb .dot{width:6px;height:6px;border-radius:50%;background:var(--gd);animation:pu 2s ease-in-out infinite}
+@keyframes pu{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.5)}}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,8vw,5rem);font-weight:300;color:var(--tx);line-height:1.08;letter-spacing:-.02em;animation:fu .9s ease .3s both}
+.hero h1 strong{font-weight:600;color:var(--td)}
+.hero h1 em{font-style:italic;display:block;color:var(--td)}
+.hero .sub{font-size:.78rem;letter-spacing:.25em;text-transform:uppercase;color:var(--tm);margin-top:1.2rem;font-weight:600;animation:fu .9s ease .5s both}
+.ha{margin-top:2.2rem;display:flex;align-items:center;justify-content:center;gap:.8rem;animation:fu .9s ease .7s both}
+.ha .ph{width:44px;height:44px;border-radius:50%;overflow:hidden;border:2px solid rgba(91,168,160,.3);box-shadow:0 3px 10px rgba(91,168,160,.15)}
+.ha .ph img{width:100%;height:100%;object-fit:cover}
+.ha .inf{text-align:left}
+.ha .inf .nm{font-family:'Cormorant Garamond',serif;font-size:.95rem;font-weight:600;color:var(--td)}
+.ha .inf .rl{font-size:.6rem;color:var(--ts);letter-spacing:.04em}
+.hx{margin-top:2.2rem;display:flex;flex-direction:column;align-items:center;gap:.8rem;animation:fu .9s ease .9s both}
+.bm{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,var(--tl),var(--td));color:#fff;font-family:'Nunito',sans-serif;font-size:1.02rem;font-weight:700;padding:1rem 2.6rem;border-radius:60px;border:none;cursor:pointer;transition:all .4s cubic-bezier(.34,1.56,.64,1);box-shadow:0 8px 30px var(--tg);letter-spacing:.02em}
+.bm:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 12px 40px var(--tg)}
+.bm span{position:relative;z-index:1}
+.ht{font-size:.72rem;color:var(--ts);display:flex;align-items:center;gap:1.3rem;flex-wrap:wrap;justify-content:center}
+.ht span{display:flex;align-items:center;gap:.25rem}
+
+/* DIVIDER */
+.orn{display:flex;align-items:center;justify-content:center;gap:.8rem;margin:0 auto 2.5rem}
+.orn .l{width:45px;height:1px;background:linear-gradient(90deg,transparent,var(--tl2))}
+.orn .l:last-child{background:linear-gradient(90deg,var(--tl2),transparent)}
+.orn .d{width:5px;height:5px;background:var(--gd);transform:rotate(45deg);border-radius:1px}
+.sec{padding:5rem 1.5rem;max-width:680px;margin:0 auto}
+.intro p{font-family:'Cormorant Garamond',serif;font-size:1.15rem;line-height:2;color:var(--tb);margin-bottom:1.3rem}
+.co{position:relative;padding:1.8rem 2rem;margin:2.5rem 0;background:var(--gs);backdrop-filter:blur(10px);border:1px solid var(--gb);border-radius:18px}
+.co::before{content:'';position:absolute;left:0;top:1.2rem;bottom:1.2rem;width:3px;background:linear-gradient(to bottom,var(--gd),var(--tl2));border-radius:2px}
+.co p{font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--td);font-style:italic;line-height:1.65;margin:0;font-weight:500}
+
+/* CREATOR */
+.cs{padding:3.5rem 1.5rem;max-width:680px;margin:0 auto}
+.cb{background:var(--gs);backdrop-filter:blur(18px);border:1px solid var(--gb);border-radius:24px;padding:2.5rem;display:flex;align-items:center;gap:2rem;position:relative;overflow:hidden}
+.cb::before{content:'';position:absolute;top:-40%;right:-20%;width:250px;height:250px;border-radius:50%;background:radial-gradient(circle,rgba(91,168,160,.15),transparent 70%);pointer-events:none}
+.cp{width:130px;height:130px;border-radius:50%;overflow:hidden;border:3px solid rgba(212,168,83,.25);box-shadow:0 8px 30px rgba(91,168,160,.15);flex-shrink:0;position:relative;z-index:1}
+.cp img{width:100%;height:100%;object-fit:cover}
+.ct{position:relative;z-index:1}
+.ct h3{font-family:'Cormorant Garamond',serif;font-size:1.45rem;color:var(--td);font-weight:600}
+.ct .tg{display:inline-block;margin:.3rem 0 .8rem;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gd);font-weight:700;background:rgba(212,168,83,.12);padding:.2rem .6rem;border-radius:16px}
+.ct p{font-size:.9rem;color:var(--tb);line-height:1.75}
+.ct p+p{margin-top:.6rem}
+
+/* FEATURES */
+.fs{padding:4.5rem 1.5rem;max-width:720px;margin:0 auto}
+.fs h2{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--tx);text-align:center;margin-bottom:.4rem;font-weight:400}
+.fs .sb{text-align:center;font-size:.8rem;color:var(--ts);margin-bottom:2.5rem}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+.fc{background:var(--g);backdrop-filter:blur(10px);border:1px solid var(--gb);border-radius:18px;padding:1.6rem 1.4rem;transition:all .4s}
+.fc:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(91,168,160,.08)}
+.fc .ic{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,rgba(91,168,160,.1),rgba(212,168,83,.06));display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:.8rem}
+.fc h3{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--tx);margin-bottom:.35rem;font-weight:600}
+.fc p{font-size:.82rem;color:var(--tm);line-height:1.65}
+
+/* PREVIEW */
+.ps{padding:3.5rem 1.5rem;max-width:780px;margin:0 auto}
+.ps h2{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--tx);text-align:center;margin-bottom:1.8rem;font-weight:400}
+.pt{display:flex;gap:1rem;overflow-x:auto;padding:1rem .5rem 1.5rem;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;mask-image:linear-gradient(90deg,transparent,black 4%,black 96%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,black 4%,black 96%,transparent)}
+.pt::-webkit-scrollbar{height:3px}.pt::-webkit-scrollbar-thumb{background:var(--tl2);border-radius:2px}
+.pc{flex:0 0 190px;scroll-snap-align:center;border-radius:14px;overflow:hidden;position:relative;box-shadow:0 6px 25px rgba(0,0,0,.07);transition:all .4s}
+.pc:hover{transform:translateY(-4px) scale(1.02)}
+.pc img{width:100%;height:auto;display:block}
+.pc .bl{position:absolute;bottom:0;left:0;right:0;height:50%;background:linear-gradient(transparent,rgba(255,255,255,.9));backdrop-filter:blur(5px);display:flex;align-items:flex-end;justify-content:center;padding-bottom:1rem}
+.pc .bl span{font-size:.58rem;color:var(--td);font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--g);padding:.25rem .7rem;border-radius:16px;border:1px solid var(--gb)}
+
+/* QUOTE */
+.qs{text-align:center;padding:4rem 2rem;max-width:600px;margin:0 auto}
+.qs .qm{font-family:'Cormorant Garamond',serif;font-size:4.5rem;color:var(--tl2);line-height:.5;opacity:.45}
+.qs blockquote{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-style:italic;color:var(--td);line-height:1.5;font-weight:400;margin-top:.8rem}
+.qs .qa{margin-top:1.2rem;font-size:.7rem;color:var(--tf);letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+
+.stats{padding:2rem 1.5rem 0;max-width:600px;margin:0 auto;display:flex;justify-content:center;gap:3rem;flex-wrap:wrap}
+.stat .n{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--td);font-weight:600}
+.stat .lb{font-size:.65rem;color:var(--ts);letter-spacing:.04em;margin-top:.1rem}
+
+/* CTA */
+.cta{text-align:center;padding:5rem 1.5rem;max-width:580px;margin:0 auto}
+.cta h2{font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:var(--tx);margin-bottom:.8rem;font-weight:400}
+.cta>p{font-size:.95rem;color:var(--tb);line-height:1.8;margin-bottom:2rem}
+.pb{display:inline-block;background:var(--gs);backdrop-filter:blur(12px);border:1px solid var(--gb);border-radius:22px;padding:1.8rem 2.8rem;margin-bottom:1.8rem;position:relative}
+.pb .ptg{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--gd),var(--gl));color:#fff;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.25rem .9rem;border-radius:16px;white-space:nowrap}
+.pb .pr{font-family:'Cormorant Garamond',serif;font-size:3.2rem;color:var(--td);font-weight:700;line-height:1}
+.pb .cu{font-size:1.4rem;vertical-align:super;font-weight:400}
+.pb .us{font-size:.9rem;color:var(--ts);font-weight:400}
+.pb .pd{font-size:.72rem;color:var(--ts);margin-top:.4rem}
+.bds{display:flex;align-items:center;justify-content:center;gap:1.3rem;margin-top:1.3rem;flex-wrap:wrap}
+.bds .b{display:flex;align-items:center;gap:.3rem;font-size:.68rem;color:var(--ts);font-weight:500}
+.bds .b svg{width:13px;height:13px;stroke:var(--tl2);fill:none;stroke-width:2}
+
+/* CHECKOUT */
+.ckp{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:6rem 1.5rem 3rem}
+.ckb{max-width:440px;width:100%;background:var(--gs);backdrop-filter:blur(22px);border:1px solid var(--gb);border-radius:26px;padding:2.2rem;box-shadow:0 16px 50px rgba(91,168,160,.08);animation:fu .5s ease}
+.ckb .ch{text-align:center;margin-bottom:1.5rem}
+.ckb .ch h2{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--td);font-weight:400}
+.ckb .ch .s{font-size:.78rem;color:var(--ts);margin-top:.3rem}
+.sm{background:linear-gradient(135deg,rgba(91,168,160,.06),rgba(212,168,83,.04));border-radius:14px;padding:1rem 1.3rem;margin-bottom:1.5rem;display:flex;align-items:center;justify-content:space-between;border:1px solid rgba(91,168,160,.08)}
+.sm .pn{font-weight:700;font-size:.85rem;color:var(--tx)}
+.sm .pdx{font-size:.65rem;color:var(--ts);margin-top:.1rem}
+.sm .op{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--td);font-weight:700}
+.cf{display:flex;flex-direction:column;gap:.8rem}
+.fgx{display:flex;flex-direction:column;gap:.25rem}
+.fgx label{font-size:.68rem;font-weight:700;color:var(--tm);letter-spacing:.05em;text-transform:uppercase}
+.fgx input,.cdi{padding:.7rem .9rem;border-radius:12px;border:1.5px solid rgba(91,168,160,.18);background:rgba(255,255,255,.6);font-family:'Nunito',sans-serif;font-size:.9rem;color:var(--tx);transition:all .3s;outline:none}
+.fgx input:focus,.cdi:focus{border-color:var(--tl);box-shadow:0 0 0 3px rgba(91,168,160,.12)}
+.fgx input::placeholder,.cdi::placeholder{color:var(--tf)}
+.pl{font-size:.68rem;font-weight:700;color:var(--tm);letter-spacing:.05em;text-transform:uppercase;margin-top:.2rem}
+.cw{border:1.5px solid rgba(91,168,160,.18);border-radius:12px;background:rgba(255,255,255,.6);padding:.7rem .9rem;display:flex;align-items:center;gap:.5rem;transition:all .3s}
+.cw:focus-within{border-color:var(--tl);box-shadow:0 0 0 3px rgba(91,168,160,.12)}
+.cw input{border:none;background:transparent;outline:none;font-family:'Nunito',sans-serif;font-size:.9rem;color:var(--tx);width:100%;padding:0}
+.cr{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:.6rem}
+.pyb{margin-top:1rem;width:100%;padding:.95rem;background:linear-gradient(135deg,var(--tl),var(--td));color:#fff;border:none;border-radius:14px;font-family:'Nunito',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;transition:all .4s;box-shadow:0 6px 25px var(--tg)}
+.pyb:hover{transform:translateY(-1px);box-shadow:0 8px 30px var(--tg)}
+.pyb:disabled{opacity:.55;cursor:not-allowed;transform:none}
+.pyb .bt{position:relative;z-index:1}
+.pyb .sp{display:none;width:20px;height:20px;border:2.5px solid rgba(255,255,255,.25);border-top-color:#fff;border-radius:50%;animation:sn .7s linear infinite;margin:0 auto}
+.pyb.ld .bt{display:none}.pyb.ld .sp{display:block}
+.snt{text-align:center;margin-top:.6rem;font-size:.62rem;color:var(--tf);display:flex;align-items:center;justify-content:center;gap:.25rem}
+.snt svg{width:10px;height:10px;stroke:var(--tl2);fill:none;stroke-width:2}
+.bk{display:block;text-align:center;margin-top:1.2rem;font-size:.8rem;color:var(--tl);cursor:pointer;transition:opacity .3s}
+.bk:hover{opacity:.6}
+
+/* THANKYOU */
+.typ{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:6rem 1.5rem 3rem}
+.tyb{max-width:560px;width:100%;text-align:center;animation:fu .5s ease}
+.oi{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--tl2),var(--tl));display:flex;align-items:center;justify-content:center;margin:0 auto 1.3rem;box-shadow:0 8px 30px var(--tg);animation:pop .5s cubic-bezier(.34,1.56,.64,1) .3s both}
+.oi svg{width:36px;height:36px;stroke:#fff;stroke-width:3;fill:none}
+.tyb h2{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--tx);font-weight:400}
+.tyb .bn{font-weight:700;color:var(--td)}
+.tyb .tsx{font-size:.95rem;color:var(--tb);line-height:1.7;margin:.4rem 0 2rem}
+.ac{background:var(--gs);backdrop-filter:blur(12px);border:1px solid var(--gb);border-radius:22px;padding:2rem;margin-bottom:1.5rem;box-shadow:0 10px 40px rgba(91,168,160,.06)}
+.ac h3{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--td);margin-bottom:.6rem;font-weight:600}
+.ac p{font-size:.88rem;color:var(--tm);line-height:1.7;margin-bottom:1.2rem}
+.ab{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,var(--tl),var(--td));color:#fff;font-family:'Nunito',sans-serif;font-size:1rem;font-weight:700;padding:1rem 2.5rem;border-radius:60px;cursor:pointer;border:none;transition:all .4s;box-shadow:0 6px 25px var(--tg);text-decoration:none}
+.ab:hover{transform:translateY(-2px);box-shadow:0 10px 35px var(--tg)}
+.ab svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.5}
+.dn{font-size:.7rem;color:var(--tf);margin-top:.6rem}
+.dn strong{color:var(--td);font-weight:600}
+
+/* FOOTER */
+footer{text-align:center;padding:2rem 1.5rem 2.5rem;border-top:1px solid rgba(91,168,160,.08)}
+.fl{height:64px;opacity:.6;margin-bottom:.4rem}
+.fsg{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;color:var(--tl);opacity:.6}
+.frl{font-size:.6rem;color:var(--tf);margin-top:.1rem;letter-spacing:.05em}
+.fds{font-size:.6rem;color:var(--tf);max-width:440px;margin:.8rem auto 0;line-height:1.5;opacity:.6}
+
+@keyframes fu{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fd{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes sn{to{transform:rotate(360deg)}}
+@keyframes pop{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+.rv{opacity:0;transform:translateY(20px);transition:opacity .8s,transform .8s}.rv.vis{opacity:1;transform:translateY(0)}
+
+@media(max-width:640px){
+  .hero h1{font-size:clamp(2.4rem,10vw,3.5rem)}
+  .fg{grid-template-columns:1fr}
+  .cb{flex-direction:column;text-align:center;padding:2rem 1.5rem;gap:1.3rem}
+  .cp{width:110px;height:110px}
+  .nav{padding:.5rem 1rem}.nl{height:68px}
+  .ni .nn{font-size:.88rem}.ni .nr{font-size:.48rem}
+  .nc{padding:.4rem 1rem;font-size:.68rem}
+  .sec{padding:3.5rem 1.2rem}
+  .ckb{padding:1.6rem}.cr{grid-template-columns:1fr}
+  .pc{flex:0 0 160px}.stats{gap:1.8rem}
+  .pb{padding:1.5rem 2rem}.ht{gap:.8rem;font-size:.65rem}
+  .fl{height:52px}
+}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+
+<nav class="nav" id="nav">
+  <a class="nb" onclick="goTo('landing')">
+    <img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1771980108/logoluzemy_wrak4l.png" alt="Logo" class="nl">
+    <div class="ni"><div class="nn">Luz Espinoza</div><div class="nr">Psicoterapeuta & Life Coach Espiritual</div></div>
+  </a>
+  <button class="nc" onclick="sc()">Obtener guía</button>
+</nav>
+
+<!-- ═══ LANDING ═══ -->
+<div id="page-landing" class="page active">
+  <header class="hero">
+    <div class="hi">
+      <div class="hb"><span class="dot"></span>Guía de primeros auxilios emocionales</div>
+      <h1><strong>Respira.</strong><br><em>Vas a estar bien.</em></h1>
+      <p class="sub">Guía para sobrevivir un ataque de ansiedad</p>
+      <div class="ha">
+        <div class="ph"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1771979785/WhatsApp_Image_2026-02-23_at_19.05.35_l08vla.jpg" alt="Luz"></div>
+        <div class="inf"><div class="nm">Luz Espinoza</div><div class="rl">Psicoterapeuta & Life Coach Espiritual</div></div>
+      </div>
+      <div class="hx">
+        <button class="bm" onclick="sc()"><span>Obtener la guía ✨</span></button>
+        <div class="ht"><span>📄 Guía web interactiva</span><span>⚡ Acceso inmediato</span><span>💛 Paso a paso</span></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="sec intro rv">
+    <div class="orn"><div class="l"></div><div class="d"></div><div class="l"></div></div>
+    <p>¿Alguna vez has sentido que todo te da vueltas? ¿Como si el mundo se encogiera a tu alrededor?</p>
+    <p>El dolor de cabeza. El nudo en la garganta. La presión en el pecho que no te deja respirar. Las manos que se entumen. Un miedo intenso que se apodera de ti...</p>
+    <div class="co"><p>Te entiendo. No estás sola. No estás loca.<br>Lo que viviste es un ataque de ansiedad. Y vas a estar bien.</p></div>
+    <p>Esta guía de primeros auxilios emocionales es un paso a paso que diseñé para que puedas sobrevivir el caos... y poco a poco, volver a ti.</p>
+  </section>
+
+  <div class="cs rv">
+    <div class="orn"><div class="l"></div><div class="d"></div><div class="l"></div></div>
+    <div class="cb">
+      <div class="cp"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1771979785/WhatsApp_Image_2026-02-23_at_19.05.35_l08vla.jpg" alt="Luz"></div>
+      <div class="ct">
+        <h3>Luz Espinoza</h3>
+        <span class="tg">✦ Psicoterapeuta & Life Coach Espiritual</span>
+        <p>Conozco de primera mano lo que es un ataque de ansiedad. Recuerdo ese momento en el que sentí que no podía respirar, que mi cuerpo se deshacía, y que una voz dentro de mí gritaba: "No puedo más."</p>
+        <p>Esa experiencia me llevó a crear esta guía — un refugio que puedas llevar contigo para cuando el mundo se sienta demasiado.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="fs rv">
+    <h2>¿Qué encontrarás dentro?</h2>
+    <p class="sb">Técnicas probadas para recuperar la calma cuando más lo necesitas</p>
+    <div class="fg">
+      <div class="fc"><div class="ic">🌬️</div><h3>Respiración 4-4-6</h3><p>Técnica guiada con ejercicio interactivo animado para calmar tu sistema nervioso.</p></div>
+      <div class="fc"><div class="ic">👁️</div><h3>Aterrizaje sensorial</h3><p>Técnica 5-4-3-2-1 paso a paso para reconectarte con el presente.</p></div>
+      <div class="fc"><div class="ic">🫧</div><h3>Burbuja dorada</h3><p>Visualización amorosa de refugio interior que puedes invocar siempre.</p></div>
+      <div class="fc"><div class="ic">💛</div><h3>Acompañamiento cálido</h3><p>Como tener a alguien a tu lado diciéndote: "Estoy aquí contigo."</p></div>
+    </div>
+  </div>
+
+  <div class="ps rv">
+    <h2>Vista previa</h2>
+    <div class="pt">
+      <div class="pc"><img src="/mnt/user-data/uploads/1.png" alt="Portada"></div>
+      <div class="pc"><img src="/mnt/user-data/uploads/2.png" alt="P2"><div class="bl"><span>Ver guía completa</span></div></div>
+      <div class="pc"><img src="/mnt/user-data/uploads/8.png" alt="P8"><div class="bl"><span>Ver guía completa</span></div></div>
+      <div class="pc"><img src="/mnt/user-data/uploads/9.png" alt="P9"><div class="bl"><span>Ver guía completa</span></div></div>
+    </div>
+  </div>
+
+  <div class="qs rv">
+    <div class="orn"><div class="l"></div><div class="d"></div><div class="l"></div></div>
+    <div class="qm">"</div>
+    <blockquote>Estoy aquí. Estoy viva. Estoy a salvo.</blockquote>
+    <p class="qa">— Mantra de la guía</p>
+  </div>
+
+  <div class="stats rv">
+    <div class="stat"><div class="n">6</div><div class="lb">Secciones interactivas</div></div>
+    <div class="stat"><div class="n">3</div><div class="lb">Técnicas probadas</div></div>
+    <div class="stat"><div class="n">∞</div><div class="lb">Acceso ilimitado</div></div>
+  </div>
+
+  <section class="cta rv" id="cta-anchor">
+    <div class="orn"><div class="l"></div><div class="d"></div><div class="l"></div></div>
+    <h2>Tu refugio te espera</h2>
+    <p>Una experiencia web interactiva con ejercicios de respiración animados, secciones desplegables y todo el acompañamiento que necesitas.</p>
+    <div class="pb"><div class="ptg">Oferta de lanzamiento</div><div class="pr"><span class="cu">$</span>9.99 <span class="us">USD</span></div><div class="pd">Acceso inmediato · Guía web interactiva</div></div><br>
+    <button class="bm" onclick="goTo('checkout')" style="font-size:1.08rem;padding:1.1rem 3rem"><span>Quiero mi guía ✨</span></button>
+    <div class="bds">
+      <div class="b"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Pago seguro</div>
+      <div class="b"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Acceso inmediato</div>
+      <div class="b"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Hecho con amor</div>
+    </div>
+  </section>
+
+  <footer>
+    <img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1771980108/logoluzemy_wrak4l.png" alt="Logo" class="fl"><br>
+    <div class="fsg">Luz Espinoza</div>
+    <div class="frl">Psicoterapeuta & Life Coach Espiritual</div>
+    <p class="fds">Esta guía es una herramienta de apoyo emocional y no sustituye la atención de un especialista.</p>
+  </footer>
+</div>
+
+<!-- ═══ CHECKOUT ═══ -->
+<div id="page-checkout" class="page">
+  <div class="ckp">
+    <div class="ckb">
+      <div class="ch"><h2>Completa tu compra</h2><p class="s">Solo un paso más para acceder a tu guía</p></div>
+      <div class="sm">
+        <div><div class="pn">Respira. Vas a estar bien.</div><div class="pdx">Guía web interactiva · Acceso inmediato</div></div>
+        <div class="op">$9.99</div>
+      </div>
+      <div class="cf">
+        <div class="fgx"><label>Nombre completo</label><input type="text" id="fn" placeholder="Tu nombre"></div>
+        <div class="fgx"><label>Correo electrónico</label><input type="email" id="em" placeholder="tu@email.com"></div>
+        <div class="pl">💳 Información de pago</div>
+        <div class="cw"><span>💳</span><input type="text" id="cn" placeholder="1234 5678 9012 3456" maxlength="19"></div>
+        <div class="cr">
+          <input type="text" class="cdi" id="ex" placeholder="MM / AA" maxlength="7">
+          <input type="text" class="cdi" id="cv" placeholder="CVC" maxlength="4">
+        </div>
+        <button class="pyb" id="pb" onclick="pay()"><span class="bt">Pagar $9.99 USD</span><div class="sp"></div></button>
+      </div>
+      <div class="snt"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>Conexión segura y encriptada</div>
+      <a class="bk" onclick="goTo('landing')">← Volver a la guía</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ THANKYOU ═══ -->
+<div id="page-thankyou" class="page">
+  <div class="typ">
+    <div class="tyb">
+      <div class="oi"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <h2>¡Gracias, <span id="bN" class="bn"></span>! 💛</h2>
+      <p class="tsx">Tu compra fue exitosa. Ya tienes acceso a tu guía interactiva.</p>
+      <div class="ac">
+        <h3>📖 Tu guía está lista</h3>
+        <p>Accede a tu guía interactiva con ejercicios de respiración animados, secciones desplegables y todo el contenido paso a paso.</p>
+        <a class="ab" href="guia.html" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Abrir mi guía
+        </a>
+        <p class="dn">También enviamos el acceso a <strong id="bE"></strong></p>
+      </div>
+      <footer style="margin-top:2rem">
+        <img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1771980108/logoluzemy_wrak4l.png" alt="Logo" class="fl"><br>
+        <div class="fsg">Luz Espinoza</div>
+        <div class="frl">Psicoterapeuta & Life Coach Espiritual</div>
+      </footer>
+    </div>
+  </div>
+</div>
+
+<script>
+function goTo(p){document.querySelectorAll('.page').forEach(e=>e.classList.remove('active'));document.getElementById('page-'+p).classList.add('active');window.scrollTo({top:0});document.querySelectorAll('.rv:not(.vis)').forEach(e=>obs.observe(e))}
+function sc(){const a=document.getElementById('cta-anchor');if(a&&document.getElementById('page-landing').classList.contains('active'))a.scrollIntoView({behavior:'smooth'});else goTo('checkout')}
+
+// Card formatting
+document.getElementById('cn').addEventListener('input',function(e){let v=e.target.value.replace(/\D/g,'').substring(0,16);e.target.value=v.replace(/(.{4})/g,'$1 ').trim()});
+document.getElementById('ex').addEventListener('input',function(e){let v=e.target.value.replace(/\D/g,'').substring(0,4);if(v.length>=3)v=v.substring(0,2)+' / '+v.substring(2);e.target.value=v});
+document.getElementById('cv').addEventListener('input',function(e){e.target.value=e.target.value.replace(/\D/g,'').substring(0,4)});
+
+// Payment - accepts any data, just checks fields aren't empty
+function pay(){
+  const n=document.getElementById('fn').value.trim();
+  const e=document.getElementById('em').value.trim();
+  const c=document.getElementById('cn').value.trim();
+  const x=document.getElementById('ex').value.trim();
+  const v=document.getElementById('cv').value.trim();
+  if(!n||!e||!c||!x||!v){alert('Por favor completa todos los campos.');return}
+  const b=document.getElementById('pb');
+  b.classList.add('ld');b.disabled=true;
+  setTimeout(()=>{
+    b.classList.remove('ld');b.disabled=false;
+    document.getElementById('bN').textContent=n.split(' ')[0];
+    document.getElementById('bE').textContent=e;
+    goTo('thankyou');
+  },2000);
+}
+
+// Scroll reveal
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('vis')})},{threshold:.1});
+document.querySelectorAll('.rv').forEach(e=>obs.observe(e));
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('sc',window.scrollY>40)});
+</script>
+</body>
+</html>
